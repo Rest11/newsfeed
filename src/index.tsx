@@ -5,6 +5,10 @@ import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import { Header } from './app/components/Header/Header';
+import { BigNews } from './app/components/News/BigNews';
+import { RegisterForm } from './app/pages/RegisterForm';
+import { HomePage } from './app/pages/HomePage';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -12,7 +16,9 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Header/>
+      <HomePage/>
+      <RegisterForm/>
     </Provider>
   </React.StrictMode>
 );
