@@ -7,6 +7,7 @@ export const newslist = [
     id: 1,
     dateOfWriting: new Date(2022,8,4,12,15),
     tag: 'Console',
+    editedBy: 'Vasya Pupkin'
   },
   {
     title: 'Xbox Games With Gold Free Games For September 2022 Revealed',
@@ -16,5 +17,6 @@ export const newslist = [
     id: 2,
     dateOfWriting: new Date(2022,8,4,12,12),
     tag: 'Console',
+    editedBy: 'George Orwell'
   },
 ]

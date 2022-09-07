@@ -1,4 +1,5 @@
 import styled, {css} from 'styled-components'
+import { Link } from 'react-router-dom';
 
 const HeaderDiv = styled.div`
   background-color: #3a3636;
@@ -31,9 +32,15 @@ const MenuDiv = styled.div`
   justify-content: center;
   p {
     margin: 0px;
+    margin-top: 5px;
     color: #FFFF;
   }
 `;
+
+const MenuLink = styled.link`
+    margin: 0px;
+    color: #FFFF;
+`
 
 const CompGames = styled.div`
   display: block;
@@ -50,7 +57,15 @@ const MobileGames = styled.div`
 `;
 
 const UserDiv = styled.div`
+  margin-top: 20px;
   width: 300px;
+  justify-content: center;
+  text-align: center;
+  p {
+    margin: 0px;
+    margin-top: 5px;
+    color: white;
+  }
 `;
 
 const NewsBig = styled.div`
@@ -85,6 +100,22 @@ width: 70%;
 margin: auto;
 height: auto;
 `
+const Footer = styled.footer`
+display: flex;
+position: fixed;
+bottom: 0px;
+height: 50px;
+width: 100%;
+background-color: #3a3636;
+justify-content:center;
+align-items: center;
+p{
+  color: white;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+` 
 
 export const StyledComponent = {
   HeaderDiv,
@@ -98,5 +129,7 @@ export const StyledComponent = {
   NewsBig,
   HomePageWrapper,
   BigNewsWrapper,
+  Footer,
+  MenuLink,
 };
 

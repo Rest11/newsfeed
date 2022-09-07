@@ -1,20 +1,16 @@
 import { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
+import { getNews } from "../reducer/newsreducer"
 import { StyledComponent } from "../styles"
-import { newslist } from "./newslist"
+
 
 export const BigNews = () => {
-  // const [news, setNews] = useState([])
-  // // newslist.map(post => setnews([]))
-  // // console.log(typeof(post))
-  // useEffect(() => setNews(newslist),[])
-  const newNewsList = [...newslist];
-
-  // console.log(news)
+  const listOfNews = useSelector(getNews);
   return (
     // {newslist.map( (news: any) => (
     <StyledComponent.BigNewsWrapper>
-      {newslist.map((news) => (
-              <StyledComponent.NewsBig>
+      {listOfNews.map((news) => (
+              <StyledComponent.NewsBig key={news.id}>
 
               <img src = { news.imageURL } alt = ""/>
               <p>{news.title}</p>
