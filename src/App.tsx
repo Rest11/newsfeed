@@ -8,6 +8,7 @@ import { Route, Routes,Link }      from 'react-router-dom';
 import { AboutPage }          from './app/pages/AboutPage';
 import { NotFoundPage }       from './app/pages/NotFoundPage';
 import { FilteredNews }       from './app/components/News/FilteredNews';
+import { SinglePage } from './app/pages/SinglePage';
 
 const App = () => {
   return (
@@ -19,8 +20,9 @@ const App = () => {
     <Routes>
       <Route path = '/' element      = {<HomePage/>}/>
       <Route path = '/about' element = {<AboutPage/>}/>
-      <Route path = 'login' element  = {<LoginPage/>}/>
+      <Route path = '/login' element  = {<LoginPage/>}/>
       <Route path = '/news' element  = {<FilteredNews/>}/>
+      <Route path = '/news/:id' element  = {<SinglePage/>}/>
       <Route path = '*' element      = {<NotFoundPage/>}/>
     </Routes>
     </>

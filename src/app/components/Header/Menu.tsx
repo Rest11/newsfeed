@@ -5,6 +5,7 @@ import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 // import { White } from '@mui/material/colors';
 import { Type } from "typescript";
 import { Link } from "react-router-dom";
+import { CustomLink } from "../CustomLink";
 
 export const MenuGames =() => {
 
@@ -15,8 +16,8 @@ export const MenuGames =() => {
         <ComputerIcon
         sx={{ fontSize: 40, color: 'white', margin: 'auto', display: 'block' }}
         ></ComputerIcon>
-        <Link to="/news">
-          <p>PC Games</p></Link>
+        <CustomLink to="/news">
+          PC Games</CustomLink>
       </StyledComponent.CompGames>
 
       <StyledComponent.PsGames>

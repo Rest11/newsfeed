@@ -75,7 +75,7 @@ const NewsBig = styled.div`
   color: #1D1F24;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 50px;
+  
   align-content: center;
   align-items: center;
 img {
@@ -89,10 +89,12 @@ p {
 `;
 
 const BigNewsWrapper = styled.div`
-width: 70%;
+width: 80%;
+margin: auto;
 height: auto;
 display: flex;
 left: 15%;
+justify-content: space-between;
 `;
 
 const HomePageWrapper = styled.div`
@@ -100,6 +102,31 @@ width: 70%;
 margin: auto;
 height: auto;
 `
+
+const NewsTitle = styled.p`
+font-size: 1.5em;
+font-weight: 600;
+text-align: center;
+`
+const NewsText = styled.p`
+font-size: 1em;
+font-weight: 400;
+text-align: left;
+width: 70%;
+margin-left:30px;
+`
+const NewsFooter = styled.div`
+display: flex;
+justify-content: space-between;
+width: 80%;
+`
+const NewsDate = styled.p`
+font-size: 1rem;
+font-weight: normal;
+margin-left:30px;
+font-style: italic;
+`
+
 const Footer = styled.footer`
 display: flex;
 position: fixed;
@@ -116,6 +143,10 @@ p{
   margin-bottom: auto;
 }
 ` 
+const CompanyName = styled.div`
+position: relative;
+left: 40%;
+`
 
 export const StyledComponent = {
   HeaderDiv,
@@ -131,5 +162,10 @@ export const StyledComponent = {
   BigNewsWrapper,
   Footer,
   MenuLink,
+  CompanyName,
+  NewsTitle,
+  NewsText,
+  NewsFooter,
+  NewsDate,
 };
 
