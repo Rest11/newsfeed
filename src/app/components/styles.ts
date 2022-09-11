@@ -12,7 +12,7 @@ const HeaderWrapper = styled.div`
   width: 70%;
   left: 15%;
   height: 100px;
-  background-color: #4a3636;
+  /* background-color: #4a3636; */
   display:flex;
   justify-content: space-between;
 `;
@@ -75,10 +75,12 @@ const NewsBig = styled.div`
   color: #1D1F24;
   margin-top: 20px;
   margin-bottom: 20px;
-  
+  /* margin-left: 20px; */
   align-content: center;
   align-items: center;
 img {
+  width: 320px;
+  height: 180px;
   border-radius: 5px;
   margin-bottom:5px;
 }
@@ -89,18 +91,20 @@ p {
 `;
 
 const BigNewsWrapper = styled.div`
-width: 80%;
+width: 90%;
 margin: auto;
-height: auto;
+flex-wrap: wrap;
 display: flex;
 left: 15%;
 justify-content: space-between;
+
 `;
 
 const HomePageWrapper = styled.div`
 width: 70%;
 margin: auto;
 height: auto;
+
 `
 
 const NewsTitle = styled.p`
@@ -147,6 +151,8 @@ const CompanyName = styled.div`
 position: relative;
 left: 40%;
 `
+
+
 
 export const StyledComponent = {
   HeaderDiv,

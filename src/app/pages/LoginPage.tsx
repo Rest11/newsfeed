@@ -3,19 +3,18 @@ import Sheet from '@mui/joy/Sheet';
 import Typography from '@mui/joy/Typography';
 import TextField from '@mui/joy/TextField';
 import Button from '@mui/joy/Button';
-import Link from '@mui/joy/Link';
-import { getUser, loggedUser } from '../components/reducer/userreducer';
+
+import { getUser, loginUser } from '../components/reducer/userreducer';
 import { useDispatch, useSelector } from "react-redux"
 import { useState } from 'react';
-import { color } from '@mui/system';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 export const LoginPage = () =>{
   const listOfUsers = useSelector(getUser);
   const dispatch = useDispatch();
-  const [loginUser, setLoginUser] = useState('');
-  const [loginUserDirty, setLoginUserDirty] = useState(false);
+  const navigate = useNavigate();
   const [loginUserError, setLoginUserError] = useState('')
-
 
   const handleUser = (event: any) => {
     event.preventDefault();
@@ -25,32 +24,23 @@ export const LoginPage = () =>{
       password: form.password.value,
     }
     const filteredUser = listOfUsers.find(user => user.login === currentUser.login);
-       
+    
+    if (currentUser.login === filteredUser?.login){
     if (currentUser.password === filteredUser?.password) {
       if (filteredUser?.isLogged === false) {
-        const someUser = {...filteredUser};
-        someUser.isLogged = true;
-        console.log('filtered',someUser); 
-        dispatch(loggedUser(someUser));
-      }
-      
+        dispatch(loginUser(currentUser));
+        navigate(-1);
+      }    
       setLoginUserError('')
     } else {
-      setLoginUserError('Такого логина не существует')
-    }
+      setLoginUserError("Password doesn't match")
+    } 
+    } else {
+      setLoginUserError("User doesn't exist")
+  }
     console.log(listOfUsers);
   }
   
-  // const loginHandle = (event: any) => {
-  //   setLoginUser(event.target.value);
-  //   if (!listOfUsers.find(user => user.login == loginUser)) {
-  //     setLoginUserError('Такого логина не существует')
-  //     console.log('Ytn')
-  //   } else {
-  //     setLoginUserError('')
-  //   }
-  // }
-
   return (
 
     <CssVarsProvider>
@@ -74,7 +64,7 @@ export const LoginPage = () =>{
           <Typography level="body2">Sign in to continue</Typography>
         </div>
         {(!!loginUserError) && 
-        <div style = {{color: 'red'}}><Typography level="body2">{loginUserError}</Typography></div>}
+        <div ><Typography level="body2" sx= {{color: 'red'}}>{loginUserError}</Typography></div>}
         <form onSubmit={handleUser}>
           
         <TextField
@@ -103,7 +93,7 @@ export const LoginPage = () =>{
         </Button>
         </form>
         <Typography
-          endDecorator={<Link href="/sign-up">Sign up</Link>}
+          endDecorator={<Link to="/sign-up">Sign up</Link>}
           fontSize="sm"
           sx={{ alignSelf: 'center' }}
         >

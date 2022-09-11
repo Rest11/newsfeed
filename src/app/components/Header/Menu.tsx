@@ -2,22 +2,19 @@ import { StyledComponent } from "../styles"
 import ComputerIcon from '@mui/icons-material/Computer';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
-// import { White } from '@mui/material/colors';
-import { Type } from "typescript";
-import { Link } from "react-router-dom";
+
 import { CustomLink } from "../CustomLink";
 
 export const MenuGames =() => {
 
   return (
     <StyledComponent.MenuDiv>
-      {/* <img src={ComputerIcon} alt="Comp"></img> */}
       <StyledComponent.CompGames>
         <ComputerIcon
         sx={{ fontSize: 40, color: 'white', margin: 'auto', display: 'block' }}
         ></ComputerIcon>
-        <CustomLink to="/news">
-          PC Games</CustomLink>
+        <CustomLink to="/news/sort/PC" key={'PC'}>
+          PC News</CustomLink>
       </StyledComponent.CompGames>
 
       <StyledComponent.PsGames>
@@ -25,7 +22,8 @@ export const MenuGames =() => {
         sx={{ fontSize: 40, color: 'white', margin: 'auto', display: 'block' }}
         >       
         </SportsEsportsIcon>
-        <p>Console Games</p>
+        <CustomLink to="/news/sort/console" key={'console'}>
+          Console News</CustomLink>
       </StyledComponent.PsGames>
 
       <StyledComponent.MobileGames>
@@ -33,7 +31,8 @@ export const MenuGames =() => {
         sx={{ fontSize: 40, color: 'white', margin: 'auto', display: 'block' }}
         >       
         </PhoneIphoneIcon>
-        <p>Mobile Games</p>
+        <CustomLink to="/news/sort/mobile" key={'mobile'}>
+          Mobile News</CustomLink>
       </StyledComponent.MobileGames>
     </StyledComponent.MenuDiv>
   );

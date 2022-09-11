@@ -7,23 +7,34 @@ const userSlicer = createSlice({
   name: 'user',
   initialState: userlist,
   reducers: {
-   loggedUser (state, action) {
+   loginUser (state, action) {
     return [
       ...state.map(user => {
         if (user.login === action.payload.login) {
-          console.log('asd')  
-          return {...action.payload, isLogged: true}
+          return {...user, isLogged: true}
         } 
-        console.log('asd')   
-        return user;
-          
-      })];      
- 
-    }
+        return user;          
+      })];       
+    },
+    logOutUser (state, action) {
+      return [
+        ...state.map(user => {
+          if (user.login === action.payload.login) {
+            return {...user, isLogged: false}
+          } 
+          return user;          
+        })];       
+      },
+    addUser (state, action) {
+      return [
+        ...state,
+        {...action.payload}
+      ]
+    },
   }
 });
 
-export const { loggedUser } = userSlicer.actions;
+export const { loginUser, addUser, logOutUser } = userSlicer.actions;
 
 export const userReducer = userSlicer.reducer;
 
