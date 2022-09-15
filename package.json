@@ -1,7 +1,7 @@
 {
   "name": "newsfeed",
   "version": "0.1.0",
-  "homepage": "https://gloriousalex.github.io/newsfeedbuild/",
+  "homepage": "https://gloriousalex.github.io/newsfeed/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.4",

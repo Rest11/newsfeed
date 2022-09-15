@@ -7,7 +7,7 @@ import { RootState } from '../../store';
 // interface Inews {
 //   title: string,
 //   imageURL: any,
-//   fullNews: any,
+//   fullNews: array,
 //   isBigNews: boolean,
 //   id: string,
 //   dateOfWriting: Date,

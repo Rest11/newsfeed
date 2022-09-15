@@ -13,7 +13,7 @@ export const BigNews = () => {
   const [currentUser] = listOfUsers.filter(user => (!!user.isLogged)); 
   const dispatch = useDispatch(); 
 
-  const handleDelete = (id:any) => {
+  const handleDelete = (id: string) => {
     console.log(id);
     dispatch(deleteNews(id));
   }

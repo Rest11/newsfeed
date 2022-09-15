@@ -1,20 +1,10 @@
 import { Box, Button, Checkbox, FormControlLabel, Radio, RadioGroup, TextField } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import styled from "styled-components";
 import { editNews, getNews } from "../components/reducer/newsreducer";
 import { getUser } from "../components/reducer/userreducer";
 
-interface InewsList  {
-  title: string,
-  imageURL: any,
-  fullNews: string,
-  isBigNews: boolean,
-  id: string,
-  dateOfWriting: Date,
-  tag: string,
-  editedBy: string
-}
 
 export const EditNewsPage = () => {
 
@@ -24,6 +14,7 @@ export const EditNewsPage = () => {
   const listOfUsers = useSelector(getUser);
   const [currentUser] = listOfUsers.filter(user => (!!user.isLogged));
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const validateNews = (event: any) => {
     event.preventDefault();
@@ -41,15 +32,15 @@ export const EditNewsPage = () => {
     const editedNews = {
       title: data.get('title'),
       imageURL: data.get('imageurl'),
-      fullNews: data.get('fullNews'),
+      fullNews: [data.get('fullNews')],
       isBigNews: data.get('OnMainpage')? true : false,  
       id: id, 
       dateOfWriting: `${newDate}`,   
       tag: data.get('radio-buttons-group'),
       editedBy: `${currentUser.userName} ${currentUser.userSurname}`,
     }
-    dispatch(editNews(editedNews))
-    console.log(news);
+    dispatch(editNews(editedNews));
+    navigate(-1);
   }
   return (
     

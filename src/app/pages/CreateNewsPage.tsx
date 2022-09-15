@@ -1,16 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { addNews, getNews } from "../components/reducer/newsreducer";
+import { addNews} from "../components/reducer/newsreducer";
 import { getUser } from "../components/reducer/userreducer";
 import { Box, Button, Checkbox, FormControlLabel, Radio, RadioGroup, TextField } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const CreateNewsPage = () =>{
 
-  const news = useSelector(getNews);
   const listOfUsers = useSelector(getUser);
   const [currentUser] = listOfUsers.filter(user => (!!user.isLogged));
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const validateNews = (event: any) => {
     event.preventDefault();
@@ -24,18 +24,17 @@ export const CreateNewsPage = () =>{
       hour   : 'numeric',
       minute : 'numeric'
      });
-     console.log('date', newDate)
     const editedNews = {
       title: data.get('title'),
       imageURL: data.get('imageurl'),
-      fullNews: data.get('fullNews'),
+      fullNews: [data.get('fullNews')],
       isBigNews: data.get('OnMainpage')? true : false,  
       dateOfWriting: `${newDate}`,   
       tag: data.get('radio-buttons-group'),
       editedBy: `${currentUser.userName} ${currentUser.userSurname}`,
     }
     dispatch(addNews(editedNews))
-    console.log(news);
+    navigate('/news/sort/all')
   }
   return (
     

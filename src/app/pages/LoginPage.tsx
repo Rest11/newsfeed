@@ -72,7 +72,7 @@ export const LoginPage = () =>{
     // html input attribute
           name="login"
           type="text"
-          placeholder="johndoe@email.com"
+          placeholder="your username"
           // pass down to FormLabel as children
           label="Login"
           required

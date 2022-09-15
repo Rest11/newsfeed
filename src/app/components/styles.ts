@@ -11,7 +11,6 @@ const HeaderWrapper = styled.div`
   width: 70%;
   left: 15%;
   height: 100px;
-  /* background-color: #4a3636; */
   display:flex;
   justify-content: space-between;
 `;
@@ -89,7 +88,6 @@ const NewsBig = styled.div`
   margin-bottom: 20px;
   margin-right: 5%;
   margin-left: 1%;
-  /* margin-left: 20px; */
   align-content: center;
   align-items: center;
 img {
