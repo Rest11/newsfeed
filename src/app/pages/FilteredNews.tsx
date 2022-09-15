@@ -52,7 +52,7 @@ export const FilteredNews = () => {
       
       </Search>
       {listOfNews.filter(news=> (tag === "all"? news.tag : (news.tag === tag)))
-      .filter(news => inputValue? news.fullNews.map(news.title.includes(inputValue): true)
+      .filter(news => inputValue? news.title.includes(inputValue): true)
       .map((news) => (
         <SmallNewsWrapper id={news.id}>
           <Link  key={news.id} to={`/news/${news.id}`}><StyledImg src={news.imageURL}></StyledImg> </Link>
