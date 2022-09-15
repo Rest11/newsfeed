@@ -7,15 +7,16 @@ import Button from '@mui/joy/Button';
 import { getUser, loginUser } from '../components/reducer/userreducer';
 import { useDispatch, useSelector } from "react-redux"
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 export const LoginPage = () =>{
   const listOfUsers = useSelector(getUser);
   const dispatch = useDispatch();
+  const location = useLocation();
   const navigate = useNavigate();
   const [loginUserError, setLoginUserError] = useState('')
-
+  console.log(location);
   const handleUser = (event: any) => {
     event.preventDefault();
     const form = event.target;
@@ -29,7 +30,7 @@ export const LoginPage = () =>{
     if (currentUser.password === filteredUser?.password) {
       if (filteredUser?.isLogged === false) {
         dispatch(loginUser(currentUser));
-        navigate(-1);
+        navigate('/');
       }    
       setLoginUserError('')
     } else {

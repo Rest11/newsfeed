@@ -2,11 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 import { newslist } from '../Lists/newslist';
 import { v4 as uuidv4 } from 'uuid';
 import { RootState } from '../../store';
-import { getDefaultMiddleware } from '@reduxjs/toolkit';
-
-const customizedMiddleware = getDefaultMiddleware({
-  serializableCheck: false
-})
 
 
 // interface Inews {
@@ -35,11 +30,14 @@ const newsSlicer = createSlice({
   addNews(state, action) {
     return [{...action.payload, id: uuidv4()
     }, ...state];
-}
+},
+  deleteNews(state, action) {
+    return [...state.filter(news => news.id !== action.payload)]
+  }
 }
 });
 
-export const { editNews, addNews } = newsSlicer.actions;
+export const { editNews, addNews, deleteNews } = newsSlicer.actions;
 
 export const newsReducer = newsSlicer.reducer;
 

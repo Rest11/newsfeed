@@ -15,7 +15,8 @@ export const SinglePage = () => {
     <StyledComponent.HomePageWrapper>
       <StyledButton variant="outlined" onClick={goback}>Go Back</StyledButton>
      <StyledComponent.NewsTitle>{filteredNews.title}</StyledComponent.NewsTitle>
-     <StyledComponent.NewsText>{filteredNews.fullNews}</StyledComponent.NewsText>
+      {filteredNews.fullNews?.map((news: string) => <StyledComponent.NewsText>{news}</StyledComponent.NewsText>)}
+     
      <StyledComponent.NewsFooter>
       <StyledComponent.NewsDate>Posted by <strong>{filteredNews.editedBy}</strong></StyledComponent.NewsDate>
       <StyledComponent.NewsDate>{filteredNews.dateOfWriting}</StyledComponent.NewsDate>

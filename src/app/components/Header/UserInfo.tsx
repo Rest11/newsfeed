@@ -29,7 +29,7 @@ export const UserInfo = () => {
 
   const handleLogOut = () => {
     dispatch(logOutUser(currentUser));
-    console.log(currentUser);
+    setAnchorEl(null);
   }
   
   return (
@@ -45,6 +45,18 @@ export const UserInfo = () => {
       </Person2Icon>
       
       <StyledTypography onClick={handleClick} aria-describedby={id}>{[currentUser.userName,' ',currentUser.userSurname]}</StyledTypography>
+
+      </>
+      ) : 
+      (<>
+      <Link to="/login">
+      <Person2Icon
+      sx={{fontSize: 40, color: 'white', margin: 'auto', display: 'block'}}
+      >           
+      </Person2Icon>
+      </Link>
+      <CustomLink to="/login" >Log In</CustomLink>
+      </>)}  
       <Popover
       id={id}
       open={open}
@@ -63,18 +75,6 @@ export const UserInfo = () => {
         </div>
       </PopoverDiv>
       </Popover>
-      </>
-      ) : 
-      (<>
-      <Link to="/login">
-      <Person2Icon
-      sx={{fontSize: 40, color: 'white', margin: 'auto', display: 'block'}}
-      >           
-      </Person2Icon>
-      </Link>
-      <CustomLink to="/login" >Log In</CustomLink>
-      </>)}  
-      
     </StyledComponent.UserDiv>
   )
 }

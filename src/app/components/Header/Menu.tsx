@@ -2,13 +2,18 @@ import { StyledComponent } from "../styles"
 import ComputerIcon from '@mui/icons-material/Computer';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
-
+import NewspaperIcon from '@mui/icons-material/Newspaper';
 import { CustomLink } from "../CustomLink";
 
 export const MenuGames =() => {
 
   return (
     <StyledComponent.MenuDiv>
+      <StyledComponent.AllNews>
+      <NewspaperIcon sx={{ fontSize: 40, color: 'white', margin: 'auto', display: 'block' }}></NewspaperIcon>
+      <CustomLink to="/news/sort/all" key={'all'}>
+          All News</CustomLink>
+      </StyledComponent.AllNews>
       <StyledComponent.CompGames>
         <ComputerIcon
         sx={{ fontSize: 40, color: 'white', margin: 'auto', display: 'block' }}

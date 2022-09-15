@@ -1,5 +1,4 @@
-import styled, {css} from 'styled-components'
-import { Link } from 'react-router-dom';
+import styled from 'styled-components'
 
 const HeaderDiv = styled.div`
   background-color: #3a3636;
@@ -43,12 +42,23 @@ const MenuLink = styled.link`
 `
 
 const CompGames = styled.div`
+  display    : block;
+  margin-left: 20px;
+`;
+
+const AllNews = styled.div`
+  width: 85px;
   display: block;
+  border-right: 1px solid white;
+  box-sizing: border-box;
+  margin-right: 10px;
+  text-align: center;
 `;
 
 const PsGames = styled.div`
   display: block;
   margin-left:30px;
+
 `;
 
 const MobileGames = styled.div`
@@ -69,12 +79,16 @@ const UserDiv = styled.div`
 `;
 
 const NewsBig = styled.div`
-  height: 270px;
+  display: flex;
+  flex-direction: column;
+  height: max-content;
   width: 320px;
   font-size: 1.2rem;
   color: #1D1F24;
   margin-top: 20px;
   margin-bottom: 20px;
+  margin-right: 5%;
+  margin-left: 1%;
   /* margin-left: 20px; */
   align-content: center;
   align-items: center;
@@ -96,14 +110,16 @@ margin: auto;
 flex-wrap: wrap;
 display: flex;
 left: 15%;
-justify-content: space-between;
+
 
 `;
 
 const HomePageWrapper = styled.div`
 width: 70%;
 margin: auto;
-height: auto;
+height: 60%;
+max-height: 65%;
+min-height: 80%;
 
 `
 
@@ -133,8 +149,8 @@ font-style: italic;
 
 const Footer = styled.footer`
 display: flex;
-position: fixed;
-bottom: 0px;
+position: relative;
+bottom: 0%;
 height: 50px;
 width: 100%;
 background-color: #3a3636;
@@ -173,5 +189,6 @@ export const StyledComponent = {
   NewsText,
   NewsFooter,
   NewsDate,
+  AllNews
 };
 
