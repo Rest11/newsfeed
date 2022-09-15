@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/newsfeedbuild/static/css/main.9071bff3.css",
+    "main.js": "/newsfeedbuild/static/js/main.286b6505.js",
+    "static/js/787.e81b8ef6.chunk.js": "/newsfeedbuild/static/js/787.e81b8ef6.chunk.js",
+    "static/media/4029176-ps-plus-sep-logo-promo1-2-thumb-1.jpg": "/newsfeedbuild/static/media/4029176-ps-plus-sep-logo-promo1-2-thumb-1.d787f76f0a08f0a7ab38.jpg",
+    "static/media/4028692-xbox-games-gold-sept-promo1-2-thumb-1.jpg": "/newsfeedbuild/static/media/4028692-xbox-games-gold-sept-promo1-2-thumb-1.003edc980cb7ff5a1e3d.jpg",
+    "index.html": "/newsfeedbuild/index.html",
+    "static/media/Logo_1.svg": "/newsfeedbuild/static/media/Logo_1.0040c4bc69e3b45cca77f05452296bf7.svg",
+    "main.9071bff3.css.map": "/newsfeedbuild/static/css/main.9071bff3.css.map",
+    "main.286b6505.js.map": "/newsfeedbuild/static/js/main.286b6505.js.map",
+    "787.e81b8ef6.chunk.js.map": "/newsfeedbuild/static/js/787.e81b8ef6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9071bff3.css",
+    "static/js/main.286b6505.js"
+  ]
+}
